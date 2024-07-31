@@ -1,0 +1,175 @@
+.sidebarContainer {
+  width: 30%;
+  height: 100vh;
+  margin-left: 20px;
+  margin-right: 0px;
+  overflow-y: auto;
+  position: relative;
+ 
+}
+
+
+.heading {
+  color: #000;
+  font-family: Roboto;
+  font-size: 31px;
+  font-style: normal;
+  font-weight: bold;
+  line-height: normal;
+  letter-spacing: 0.63px;
+  margin-top: 2.5rem;
+  text-align: center;
+}
+
+.CreateButton {
+  height: 70px;
+  width: 70px;
+  border-radius: 50%;
+  cursor: pointer;
+  color: #fff;
+  background-color:  #16008B;
+  font-family: Roboto;
+  font-size: 40px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 97%;
+  letter-spacing: 0.54px;
+  position: fixed;
+  top: 89vh;
+  left: 25vw;
+}
+
+.GroupList {
+  overflow-y: auto;
+}
+
+.groupIcon {
+  margin-left: 10px;
+  width: 68px;
+  height: 68px;
+  color: #fff;
+  border-radius: 50px;
+  font-size: 24px;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  font-family: Roboto;
+}
+
+.groupItem {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  margin-bottom: 20px;
+}
+.groupItem.selected {
+  border-radius: 22px 0px 0px 22px;
+  background-color: rgba(47, 47, 47, 0.17);
+}
+.groupItem:hover {
+  border-radius: 22px 0px 0px 22px;
+  background-color: rgba(47, 47, 47, 0.17);
+}
+
+.groupName {
+  font-family: Roboto;
+  font-weight: bold;
+  letter-spacing: 0.48px;
+  margin-left: 40px;
+  margin-bottom: 20px;
+}
+.MessageAreaContainer {
+  background:  rgba(218, 229, 245, 1);
+  width: 70%;
+  height: 100vh;
+  background-repeat: no-repeat;
+  box-sizing: border-box;
+}
+
+.MessageAreaText {
+  margin-top: 70px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.MessageAreaHeading {
+  color: #000;
+  font-family: Roboto;
+  font-size: 40px;
+  font-style: normal;
+  
+  line-height: normal;
+  letter-spacing: 1px;
+  margin-top: 2px;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+.MessageAreaDescription {
+  color: #292929;
+  margin-top: 0;
+  text-align: center;
+  font-family: Roboto;
+  font-size: 18px;
+  font-style: normal;
+  font-weight:bold;
+  line-height: 32px;
+  letter-spacing: 0.44px;
+}
+.MessageAreaFooter {
+  display: flex;
+  position: absolute;
+  bottom: 20px;
+  right: 32%;
+}
+
+.sidebarContainerMobile {
+  width: 100%;
+  height: fit-content;
+}
+
+.CreateButtonMobile {
+  height: 70px;
+  width: 70px;
+  border-radius: 50%;
+  cursor: pointer;
+  color: #fff;
+  background-color:  #16008B;
+  font-family: Roboto;
+  font-size: 30px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 97%;
+  letter-spacing: 0.54px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 20px;
+  position: fixed;
+  left: 75vw;
+  bottom: 1px;
+}
+.headingMobile {
+  color: #000;
+  margin-left: 20px;
+  font-family: Roboto;
+  font-size: 31px;
+  font-style: normal;
+  font-weight: bold;
+  line-height: normal;
+  letter-spacing: 0.63px;
+  text-align: center;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background: #888;
+}

@@ -44,7 +44,7 @@ const Body = (props) => {
       });
 
       try {
-        const response = await fetch(`http://localhost:5000/api/groups/${currentGroup._id}/notes`, {
+        const response = await fetch(`https://pocket-notes-cuvette.onrender.com/api/groups/${currentGroup._id}/notes`, {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',

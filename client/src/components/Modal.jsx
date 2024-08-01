@@ -65,7 +65,7 @@ const Modal = (props) => {
     }
 
     try {
-      const response = await fetch('http://localhost:5000/api/groups', {
+      const response = await fetch('https://pocket-notes-cuvette.onrender.com/api/groups', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

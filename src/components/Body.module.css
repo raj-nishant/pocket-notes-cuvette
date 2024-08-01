@@ -1,0 +1,240 @@
+.notesHeader {
+  height: 58px;
+  background: rgba(0, 31, 139, 1);
+  display: flex;
+  align-items: center;
+  padding: 20px;
+  color: #FFF;
+}
+
+.notesContainer {
+  background: rgba(0, 31, 139, 1);
+  height: 100%;
+  width: 100%;
+
+
+}
+
+.notesGroup {
+  margin-left: 10px;
+  width: 68px;
+  height: 68px;
+  color: #fff;
+  border-radius: 50px;
+  font-size: 24px;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  padding: 10px;
+}
+
+.groupName {
+  font-family: Roboto;
+  font-weight: bold;
+  letter-spacing: 0.48px;
+  margin-left: 20px;
+  margin-bottom: 20px;
+}
+
+.NotesAndDate {
+  overflow-y: auto;
+  height: 60vh;
+  width: 100%;
+  background-color: rgba(218, 229, 245, 1);
+
+}
+
+.DateAndTime {
+  display: flex;
+  justify-content: flex-end;
+  bottom: 2px;
+  right: 3px;
+
+}
+
+
+.DateAndText {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 10px;
+  position: relative;
+  border-radius: 5px;
+  background: #FFF;
+  box-shadow: 0px 4px 20px 0px rgba(0, 0, 0, 0.25);
+
+  margin: 10px;
+  
+  width: 90%;
+  height: 210px;
+  flex-shrink: 0;
+}
+
+.Time {
+  margin-left: 80px;
+  margin-top: 10px;
+  margin-right: 100px;
+  margin-bottom: 0px;
+  color: #353535;
+  font-family: Roboto;
+  font-size: 15px;
+  font-weight: bold;
+  line-height: 97%;
+  letter-spacing: 0.373px;
+  width: 10vh;
+}
+
+.Date {
+  margin-top: 10px;
+  margin-right: 10px;
+  margin-left: 80px;
+  color: #353535;
+  font-family: Roboto;
+  font-size: 15px;
+  font-weight: bold;
+  line-height: 97%;
+  letter-spacing: 0.373px;
+}
+
+.Text {
+  height: 90%;
+  width: 100%;
+  color: #000;
+
+  font-family: Roboto;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 160.188%;
+  z-index: 1;
+  letter-spacing: 0.63px;
+  overflow-y: auto;
+  overflow-wrap: break-word;
+}
+
+.Textarea {
+  margin: 10px;
+  margin-top: 15px;
+
+
+}
+
+.TextInput {
+  height: 18vh;
+  width: 95%;
+  margin: 5px;
+  padding-left: 20px;
+  padding-top: 20px;
+  border-radius: 9px;
+  resize: none;
+  border: none;
+  font-family: Roboto;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: 0.596px;
+}
+
+.TextInput::placeholder {
+  color: #9a9a9a;
+  font-family: Roboto;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: 0.596px;
+}
+
+.SendImg {
+  position: absolute;
+  bottom: 30px;
+  right: 40px;
+  cursor: pointer;
+}
+
+
+
+.TimeMobile {
+  margin-top: 10px;
+  margin-right: 10px;
+  margin-left: 25px;
+  color: #353535;
+  font-family: Roboto;
+  font-size: 15px;
+  font-weight: bold;
+  line-height: 97%;
+  letter-spacing: 0.373px;
+}
+
+.DateMobile {
+  margin-top: 10px;
+  margin-right: 10px;
+  margin-left: 25px;
+  color: #353535;
+  font-family: Roboto;
+  font-size: 15px;
+  font-weight: bold;
+  line-height: 97%;
+  letter-spacing: 0.373px;
+}
+
+.SendImgMobile {
+  position: absolute;
+  right: 5%;
+  bottom: 2%;
+  cursor: pointer;
+}
+
+.TextareaMobile {
+  margin: 10px;
+  margin-top: 15px;
+  background-color: #e8e8e8;
+}
+
+.TextInputMobile {
+  height: 18vh;
+  width: 96%;
+  padding-left: 20px;
+  padding-top: 20px;
+  border-radius: 9px;
+  resize: none;
+  border: none;
+  font-family: Roboto;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: 0.596px;
+}
+
+.TextInputMobile::placeholder {
+  color: #9a9a9a;
+  font-family: Roboto;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: 0.596px;
+}
+
+.NotesAndDateMobile {
+  overflow-y: auto;
+  height: 65vh;
+  
+  background: #DCE7F7;
+}
+
+.TextMobile {
+ 
+
+  height: 90%;
+  width: 100%;
+  color: #000;
+
+  font-family: Roboto;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 160.188%;
+  z-index: 1;
+  letter-spacing: 0.63px;
+  overflow-y: auto;
+  overflow-wrap: break-word;
+}

@@ -1,7 +1,13 @@
 import React, { useState, useEffect } from "react";
+import Modal from "./Modal";
+import Body from "./Body";
 import banner from "../assets/Banner.png";
 import lock from "../assets/lock.png";
 import "./Home.css";
+import {
+  getGroupAbbreviation,
+  fetchGroupsFromLocalStorage,
+} from "../utils/helper";
 
 const Home = () => {
   const [openModal, setOpenModal] = useState(false);
@@ -22,16 +28,6 @@ const Home = () => {
 
     window.addEventListener("resize", handleResize);
 
-    // Mock function to fetch groups from local storage
-    const fetchGroupsFromLocalStorage = async () => {
-      // Mock data
-      const storedGroups = [
-        { id: 1, groupName: "Group 1", color: "red" },
-        { id: 2, groupName: "Group 2", color: "blue" },
-      ];
-      return storedGroups;
-    };
-
     fetchGroupsFromLocalStorage().then((storedGroups) => {
       setGroups(storedGroups);
     });
@@ -43,11 +39,6 @@ const Home = () => {
 
   const handleGroupClick = (group) => {
     setGroupSelect(group);
-  };
-
-  // Mock function to get group abbreviation
-  const getGroupAbbreviation = (groupName) => {
-    return groupName.split(" ").map(word => word[0]).join("");
   };
 
   const renderGroupList = () => {
@@ -74,10 +65,11 @@ const Home = () => {
       {screenSize.width < 989 ? (
         <div className="sidebarContainerMobile">
           {groupSelect ? (
-            <div>
-              {/* Placeholder for Body component */}
-              <h1>{groupSelect.groupName} Details</h1>
-            </div>
+            <Body
+              groupSelect={groupSelect}
+              groups={groups}
+              setGroups={setGroups}
+            />
           ) : (
             <>
               <h1 className="headingMobile">Pocket Notes</h1>
@@ -92,13 +84,11 @@ const Home = () => {
           )}
 
           {openModal && (
-            <div>
-              {/* Placeholder for Modal component */}
-              <div className="modal">
-                <button onClick={() => setOpenModal(false)}>Close</button>
-                {/* Modal content goes here */}
-              </div>
-            </div>
+            <Modal
+              closeModal={setOpenModal}
+              setGroups={setGroups}
+              groups={groups}
+            />
           )}
         </div>
       ) : (
@@ -111,20 +101,19 @@ const Home = () => {
             {renderGroupList()}
           </div>
           {openModal && (
-            <div>
-              {/* Placeholder for Modal component */}
-              <div className="modal">
-                <button onClick={() => setOpenModal(false)}>Close</button>
-                {/* Modal content goes here */}
-              </div>
-            </div>
+            <Modal
+              closeModal={setOpenModal}
+              setGroups={setGroups}
+              groups={groups}
+            />
           )}
           <div className="MessageAreaContainer">
             {groupSelect ? (
-              <div>
-                {/* Placeholder for Body component */}
-                <h1>{groupSelect.groupName} Details</h1>
-              </div>
+              <Body
+                groupSelect={groupSelect}
+                groups={groups}
+                setGroups={setGroups}
+              />
             ) : (
               <>
                 <div className="MessageAreaText">

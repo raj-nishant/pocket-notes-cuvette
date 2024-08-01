@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import styles from "./Modal.module.css";
 
 const Modal = (props) => {
-  const [formData, setFormData] = useState({ grpName: " ", color: " " });
+  const [formData, setFormData] = useState({ grpName: "", color: "" });
   const setGroups = props.setGroups;
   const groups = props.groups;
   const color = [
@@ -27,6 +27,7 @@ const Modal = (props) => {
       setScreenSize(getScreen());
     };
     window.addEventListener("resize", Screen);
+    return () => window.removeEventListener("resize", Screen);
   }, []);
 
   const handleChange = (e) => {
@@ -42,7 +43,7 @@ const Modal = (props) => {
     });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
 
     const trimmedGroupName = formData.grpName.trim().toLowerCase();
@@ -62,18 +63,30 @@ const Modal = (props) => {
       alert("Please select a color");
       return;
     }
-    let newGroup = [
-      ...groups,
-      {
-        groupName: formData.grpName,
-        color: formData.color,
-        notes: [],
-        id: groups.length,
-      },
-    ];
-    setGroups(newGroup);
-    localStorage.setItem("groups", JSON.stringify(newGroup));
-    props.closeModal(false);
+
+    try {
+      const response = await fetch('http://localhost:5000/api/groups', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          groupName: formData.grpName,
+          color: formData.color,
+        }),
+      });
+
+      if (!response.ok) {
+        throw new Error('Network response was not ok');
+      }
+
+      const newGroup = await response.json();
+      setGroups([...groups, newGroup]);
+      props.closeModal(false);
+    } catch (error) {
+      console.error('Error creating group:', error);
+      alert('Failed to create group. Please try again.');
+    }
   };
 
   return (

@@ -6,7 +6,7 @@ import lock from "../assets/lock.png";
 import "./Home.css";
 import {
   getGroupAbbreviation,
-  fetchGroupsFromLocalStorage,
+  fetchGroupsFromAPI,
 } from "../utils/helper";
 
 const Home = () => {
@@ -28,8 +28,8 @@ const Home = () => {
 
     window.addEventListener("resize", handleResize);
 
-    fetchGroupsFromLocalStorage().then((storedGroups) => {
-      setGroups(storedGroups);
+    fetchGroupsFromAPI().then((fetchedGroups) => {
+      setGroups(fetchedGroups);
     });
 
     return () => {

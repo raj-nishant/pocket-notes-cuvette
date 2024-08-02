@@ -71,82 +71,76 @@ const Home = () => {
 
   return (
     <>
-      {loading ? (
-        <Loader />
-      ) : (
-        <>
-          {screenSize.width < 989 ? (
-            <div className="sidebarContainerMobile">
-              {groupSelect ? (
-                <Body
-                  groupSelect={groupSelect}
-                  groups={groups}
-                  setGroups={setGroups}
-                />
-              ) : (
-                <>
-                  <h1 className="headingMobile">Pocket Notes</h1>
-                  <button
-                    className="CreateButtonMobile"
-                    onClick={() => setOpenModal(true)}
-                  >
-                    +
-                  </button>
-                  {renderGroupList()}
-                </>
-              )}
-
-              {openModal && (
-                <Modal
-                  closeModal={setOpenModal}
-                  setGroups={setGroups}
-                  groups={groups}
-                />
-              )}
-            </div>
+      {screenSize.width < 989 ? (
+        <div className="sidebarContainerMobile">
+          {groupSelect ? (
+            <Body
+              groupSelect={groupSelect}
+              groups={groups}
+              setGroups={setGroups}
+            />
           ) : (
             <>
-              <div className="sidebarContainer">
-                <h1 className="heading">Pocket Notes</h1>
-                <button className="CreateButton" onClick={() => setOpenModal(true)}>
-                  +
-                </button>
-                {renderGroupList()}
-              </div>
-              {openModal && (
-                <Modal
-                  closeModal={setOpenModal}
-                  setGroups={setGroups}
-                  groups={groups}
-                />
-              )}
-              <div className="MessageAreaContainer">
-                {groupSelect ? (
-                  <Body
-                    groupSelect={groupSelect}
-                    groups={groups}
-                    setGroups={setGroups}
-                  />
-                ) : (
-                  <>
-                    <div className="MessageAreaText">
-                      <img src={banner} alt="banner" />
-                      <h1 className="MessageAreaHeading">Pocket Notes</h1>
-                      <p className="MessageAreaDescription">
-                        Send and receive messages without keeping your phone online.
-                        <br /> Use Pocket Notes on up to 4 linked devices and 1
-                        mobile phone
-                      </p>
-                    </div>
-                    <footer className="MessageAreaFooter">
-                      <img src={lock} alt="lock" />
-                      &nbsp; end-to-end encrypted
-                    </footer>
-                  </>
-                )}
-              </div>
+              <h1 className="headingMobile">Pocket Notes</h1>
+              <button
+                className="CreateButtonMobile"
+                onClick={() => setOpenModal(true)}
+              >
+                +
+              </button>
+              {loading ? <Loader /> : renderGroupList()}
             </>
           )}
+
+          {openModal && (
+            <Modal
+              closeModal={setOpenModal}
+              setGroups={setGroups}
+              groups={groups}
+            />
+          )}
+        </div>
+      ) : (
+        <>
+          <div className="sidebarContainer">
+            <h1 className="heading">Pocket Notes</h1>
+            <button className="CreateButton" onClick={() => setOpenModal(true)}>
+              +
+            </button>
+            {loading ? <Loader /> : renderGroupList()}
+          </div>
+          {openModal && (
+            <Modal
+              closeModal={setOpenModal}
+              setGroups={setGroups}
+              groups={groups}
+            />
+          )}
+          <div className="MessageAreaContainer">
+            {groupSelect ? (
+              <Body
+                groupSelect={groupSelect}
+                groups={groups}
+                setGroups={setGroups}
+              />
+            ) : (
+              <>
+                <div className="MessageAreaText">
+                  <img src={banner} alt="banner" />
+                  <h1 className="MessageAreaHeading">Pocket Notes</h1>
+                  <p className="MessageAreaDescription">
+                    Send and receive messages without keeping your phone online.
+                    <br /> Use Pocket Notes on up to 4 linked devices and 1
+                    mobile phone
+                  </p>
+                </div>
+                <footer className="MessageAreaFooter">
+                  <img src={lock} alt="lock" />
+                  &nbsp; end-to-end encrypted
+                </footer>
+              </>
+            )}
+          </div>
         </>
       )}
     </>
